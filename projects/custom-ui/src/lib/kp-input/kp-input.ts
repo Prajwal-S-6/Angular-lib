@@ -1,11 +1,16 @@
 import {Component, input} from '@angular/core';
-import {ControlValueAccessor} from '@angular/forms';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
   selector: 'kp-input',
   imports: [],
   templateUrl: './kp-input.html',
   styleUrl: './kp-input.css',
+  providers: [
+    {provide: NG_VALUE_ACCESSOR,
+    useExisting: KpInput,
+    multi: true}
+  ]
 })
 export class KpInput implements ControlValueAccessor {
     label = input.required<string>();
