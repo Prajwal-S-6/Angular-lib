@@ -2,7 +2,7 @@ import {Component, input} from '@angular/core';
 import {ControlValueAccessor} from '@angular/forms';
 
 @Component({
-  selector: 'lib-kp-input',
+  selector: 'kp-input',
   imports: [],
   templateUrl: './kp-input.html',
   styleUrl: './kp-input.css',
