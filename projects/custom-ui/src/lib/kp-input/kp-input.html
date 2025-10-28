@@ -1,10 +1,10 @@
 <label>
+  {{label()}}
   <input
     [type]="type()"
     [value]="value"
     [disabled]="disabled"
     (input)="handleInput($event)"
     (blur)="onTouched()">
-  {{label()}}
 </label>
 
