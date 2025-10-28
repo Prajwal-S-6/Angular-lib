@@ -3,5 +3,34 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "custom-ui": {
+      "projectType": "library",
+      "root": "projects/custom-ui",
+      "sourceRoot": "projects/custom-ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/custom-ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/custom-ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/custom-ui/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "50b4cf27-3715-454c-a0ae-cf986b5f1bb8"
   }
 }
