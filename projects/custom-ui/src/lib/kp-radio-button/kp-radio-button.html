@@ -1,1 +1,5 @@
-<p>kp-radio-button works!</p>
+<mat-radio-group aria-label="Select an option" (change)="onSelectionchange($event.value)">
+  @for (option of options(); track option) {
+    <mat-radio-button [value]="option">{{option}}</mat-radio-button>
+  }
+</mat-radio-group>
