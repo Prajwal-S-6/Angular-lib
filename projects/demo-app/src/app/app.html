@@ -1,4 +1,5 @@
 <form [formGroup]="myForm">
   <kp-input [label]="'Name'" formControlName="myName" [placeholder]="'Name'" [disabled]="true"></kp-input>
+  <kp-radio-button [options]="genderOptions" formControlName="myGender"></kp-radio-button>
   <button class="btn" (click)="onFormSubmit()">Submit</button>
 </form>
