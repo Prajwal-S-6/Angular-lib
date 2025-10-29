@@ -2,10 +2,11 @@ import {Component, inject, OnInit, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {KpInput, KpRadioButton} from 'custom-ui';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, KpInput, ReactiveFormsModule, KpRadioButton],
+  imports: [RouterOutlet, KpInput, ReactiveFormsModule, KpRadioButton, MatButton],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
