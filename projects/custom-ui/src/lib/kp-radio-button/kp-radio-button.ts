@@ -1,11 +1,43 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
+import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
+import {ControlValueAccessor} from '@angular/forms';
 
 @Component({
   selector: 'lib-kp-radio-button',
-  imports: [],
+  imports: [
+    MatRadioButton,
+    MatRadioGroup
+  ],
   templateUrl: './kp-radio-button.html',
   styleUrl: './kp-radio-button.css',
 })
-export class KpRadioButton {
+export class KpRadioButton implements ControlValueAccessor{
+  options = input.required<[]>();
+  value= '';
+  readonly = input(false);
+  disabled = false;
+
+
+  onChange = (value: any) => {};
+  onTouched = () => {};
+
+  writeValue(obj: any): void {
+    this.value = obj;
+  }
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+  setDisabledState?(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+  onSelectionchange(event: string) {
+    this.value = event;
+    this.onTouched();
+    this.onChange(this.value);
+  }
 
 }
