@@ -3,7 +3,7 @@ import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
-  selector: 'lib-kp-radio-button',
+  selector: 'kp-radio-button',
   imports: [
     MatRadioButton,
     MatRadioGroup
@@ -19,7 +19,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
   ]
 })
 export class KpRadioButton implements ControlValueAccessor{
-  options = input.required<[]>();
+  options = input.required<{label: string, value: string, checked: boolean}[]>();
   value= '';
   readonly = input(false);
   disabled = false;

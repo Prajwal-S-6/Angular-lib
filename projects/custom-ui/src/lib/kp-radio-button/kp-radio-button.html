@@ -1,5 +1,5 @@
 <mat-radio-group aria-label="Select an option" (change)="onSelectionchange($event.value)">
   @for (option of options(); track option) {
-    <mat-radio-button [value]="option">{{option}}</mat-radio-button>
+    <mat-radio-button [value]="option.value" [checked]="option.checked">{{option.label}}</mat-radio-button>
   }
 </mat-radio-group>
