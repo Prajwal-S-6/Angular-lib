@@ -1,15 +1,22 @@
 import {Component, input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {MatFormField, MatInput, MatLabel} from '@angular/material/input';
 
 @Component({
   selector: 'kp-input',
-  imports: [],
+  imports: [
+    MatInput,
+    MatFormField,
+    MatLabel
+  ],
   templateUrl: './kp-input.html',
   styleUrl: './kp-input.css',
   providers: [
-    {provide: NG_VALUE_ACCESSOR,
-    useExisting: KpInput,
-    multi: true}
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: KpInput,
+      multi: true
+    }
   ]
 })
 export class KpInput implements ControlValueAccessor {
@@ -17,6 +24,7 @@ export class KpInput implements ControlValueAccessor {
     type = input('text');
     disabled = false;
     value = '';
+    placeholder = input.required<string>();
 
   onChange = (_: any) => {};
   onTouched = () => {};
