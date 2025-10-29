@@ -1,4 +1,4 @@
 <form [formGroup]="myForm">
-  <kp-input [label]="'Name'" formControlName="myName"></kp-input>
+  <kp-input [label]="'Name'" formControlName="myName" [placeholder]="'Name'" [disabled]="true"></kp-input>
   <button class="btn" (click)="onFormSubmit()">Submit</button>
 </form>
