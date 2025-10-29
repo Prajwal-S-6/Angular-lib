@@ -26,7 +26,7 @@ export class KpInput implements ControlValueAccessor {
     value = '';
     placeholder = input.required<string>();
 
-  onChange = (_: any) => {};
+  onChange = (value: any) => {};
   onTouched = () => {};
 
     writeValue(obj: any): void {
